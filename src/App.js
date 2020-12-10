@@ -12,8 +12,10 @@ import ThemeContext from './components/ContextTest/context'
 
 const HigherOrderTest = lazy(() => import('./components/higherorder'))
 const A = lazy(() => import('./components/ContextTest'))
-
 const HOCWithAuth = lazy(() => import('./components/higherorder/auth'))
+const Memo = lazy(() => import('./components/useMemo'))
+
+
 function App() {
   const [auth, setAuth] = useState(false)
   return (
@@ -35,6 +37,7 @@ function App() {
                 </li>
               </ul>
             </li>
+            <li><Link to='memo'>UseMemo </Link></li>
           </ul>
 
 
@@ -51,6 +54,9 @@ function App() {
             </Route>
             <Route path="/higherorderAuth" exact={true}>
               <HOCWithAuth isAuthenticated={auth} optional={'hola optional'} />
+            </Route>
+            <Route path="/memo" exact={true}>
+              <Memo />
             </Route>
           </Switch>
         </Router>
