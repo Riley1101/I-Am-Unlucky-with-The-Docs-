@@ -14,7 +14,7 @@ const HigherOrderTest = lazy(() => import('./components/higherorder'))
 const A = lazy(() => import('./components/ContextTest'))
 const HOCWithAuth = lazy(() => import('./components/higherorder/auth'))
 const Memo = lazy(() => import('./components/useMemo'))
-
+const JSX = lazy(() => import('./components/jsx'))
 
 function App() {
   const [auth, setAuth] = useState(false)
@@ -38,6 +38,7 @@ function App() {
               </ul>
             </li>
             <li><Link to='memo'>UseMemo </Link></li>
+            <li><Link to='jsx'>JSX </Link></li>
           </ul>
 
 
@@ -57,6 +58,9 @@ function App() {
             </Route>
             <Route path="/memo" exact={true}>
               <Memo />
+            </Route>
+            <Route path="/jsx" exact={true}>
+              <JSX />
             </Route>
           </Switch>
         </Router>
